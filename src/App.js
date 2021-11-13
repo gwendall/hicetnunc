@@ -13,6 +13,7 @@ const RedirectWarning = () => {
       window.alert('You are viewing a mirror of the website hicetnunc.xyz. We are a community version, not the original one.');
     }
   }, []);
+  return null;
 };
 
 const App = () => {
