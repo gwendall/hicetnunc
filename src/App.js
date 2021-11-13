@@ -7,6 +7,14 @@ import { Loading as Preloading } from './components/loading'
 import { FeedbackComponent } from './components/feedback'
 import { routes } from './routes'
 
+const RedirectWarning = () => {
+  React.useEffect(() => {
+    if (window.location.host === 'hicetnunc.cc') {
+      window.alert('You are viewing a mirror of the website hicetnunc.xyz. We are a community version, not the original one.');
+    }
+  }, []);
+};
+
 const App = () => {
   const [loading, setLoading] = useState(true)
 
@@ -25,6 +33,7 @@ const App = () => {
     <HicetnuncContextProvider>
       <Header />
       <FeedbackComponent />
+      <RedirectWarning />
       <Switch>
         {routes.map(({ exact, path, component: Comp }) => (
           <Route path={path} exact={exact} key={path} component={Comp} />
