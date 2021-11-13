@@ -8,7 +8,7 @@ import { FeedbackComponent } from './components/feedback'
 import { routes } from './routes'
 
 const RedirectWarning = () => {
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (window.location.host === 'hicetnunc.cc') {
       window.alert('You are viewing a mirror of the website hicetnunc.xyz. We are a community version, not the original one.');
     }
